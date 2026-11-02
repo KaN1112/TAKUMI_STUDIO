@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="作品画像の差し替え用">
+  <rect width="800" height="600" fill="#f2f2f2"/>
+  <text x="400" y="295" text-anchor="middle" fill="#555555" font-family="Arial, sans-serif" font-size="26">作品画像を設定</text>
+  <text x="400" y="338" text-anchor="middle" fill="#777777" font-family="Arial, sans-serif" font-size="18">1</text>
+</svg>
