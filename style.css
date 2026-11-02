@@ -35,10 +35,13 @@ a:focus-visible {
 
 .site-header h1 {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  letter-spacing: 0.025em;
-  line-height: 1.2;
+}
+
+.site-header h1 img {
+  width: min(100%, 640px);
+  height: clamp(100px, 34vw, 220px);
+  margin: 0 auto;
+  object-fit: cover;
 }
 
 .site-main {
@@ -68,6 +71,13 @@ a:focus-visible {
   margin: 14px 0 0;
   font-size: 1rem;
   font-weight: 600;
+  line-height: 1.5;
+}
+
+.work-medium {
+  margin: 3px 0 0;
+  color: #555555;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
