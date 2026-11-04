@@ -26,6 +26,46 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+.opening-screen {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  visibility: visible;
+  animation: opening-screen-exit 3s ease-out forwards;
+}
+
+.opening-screen img {
+  width: min(80vw, 640px);
+  height: auto;
+  opacity: 0;
+  animation: opening-logo-enter 0.5s ease-out forwards;
+}
+
+html.opening-active {
+  overflow: hidden;
+}
+
+@keyframes opening-logo-enter {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opening-screen-exit {
+  0%, 83.333% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .site-header {
   max-width: 1000px;
   margin: 0 auto;
@@ -79,6 +119,21 @@ a:focus-visible {
   color: #555555;
   font-size: 0.875rem;
   line-height: 1.5;
+}
+
+.motion-ready .reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.motion-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-ready .work-card:nth-child(even) {
+  transition-delay: 0.1s;
 }
 
 .contact {
@@ -174,5 +229,22 @@ a:focus-visible {
 
   .contact p {
     font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opening-screen {
+    display: none;
+    animation: none;
+  }
+
+  .opening-screen img {
+    animation: none;
+  }
+
+  .motion-ready .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
